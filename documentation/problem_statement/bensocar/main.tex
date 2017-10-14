@@ -1,0 +1,45 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc, letterpaper]{IEEEtran}
+
+\usepackage[margin=0.75in]{geometry}
+
+\def\name{Carl Benson}
+
+\parindent = 0.0 in
+\parskip = 0.1 in
+
+
+\usepackage{titling}
+\usepackage{blindtext}
+\usepackage{enumitem}
+
+\title{Problem Statement}
+\date{CS461 Fall 2017}
+\author{Carl Benson}
+\begin{document}
+\begin{titlingpage}
+    \maketitle
+    \begin{abstract}
+        With the ever increasing technologies relating to human interaction, there are countless new possibilities opening up. Voice controlled virtual assistants are are being integrated into everyday life, head mounted displays are able to transport the viewer to new places, and wrist-mounted computers are becoming more powerful and feature packed. The main area of focus for this project is bringing voice recognition and VR together to create an interactive system for displaying and interacting with data. Voice recognition allows for easy access to the data, as it is just a request away. Displaying the returned data through a VR headset allows for the creation of an immersive new environment. By putting the user in the data, they can work with and experience it in a whole new way.
+    \end{abstract}
+\end{titlingpage}
+\section{Definition \& Description}
+There are many new technologies emerging. Many opportunities that these technologies grant are currently unexplored or under-explored. Data visualization in VR is something that only a few companies are publicly working on, and none have yet publicly released a product. There has been some work done with tying voice commands into VR, but still the quantity is limited. The current proposal combines these two ideas. Equipped with a voice command enabled device and a VR headset, a user will be able to ask for data, such as "show me Ford sales for Oregon." Following this command, the relevant data will be displayed within the headset. If there are multiple pieces of data simultaneously being displayed, they can be overlaid and compared. While the user is viewing the data, a wrist mounted device monitors their heart rate and records any unusual fluctuations. This data is then used to identify data that stressed the user. This record can then be used in the future to predict and warn them when the current data is approaching a similar bad state and allow them to preemptively act.
+\section{Proposed Solution}
+The proposed solution to implement this project utilizes off the shelf devices that each are specially designed to be used in a particular scenario.
+\\
+The Amazon Alexa excels at identify and interpreting speech. With its internet connection and open development access, it provides a solid framework for implementing custom commands to interact with the rest of the system. Once a command is issued to Alexa, the content of the request must be determined. What is being requested, how should it be displayed, and what is the precise data that should be accessed are just a few of the requirements that need to be determined prior to actually providing the data to the headset.
+\\
+The HTC Vive has a pair of high resolution displays to create a more fluid environment for virtualization. The included hand-held controllers enables users to interact with the data by simply pointing and dragging it around the virtual room. Once the request has been handled and the data returned, it is up to the headset to display it. It will need to be displayed in front of the user, not behind them or in another unexpected or useless location. It needs to be a proper size, too big and it appears close up and causes headaches; if the data is too small it appears far away and causes eye strain.
+\\
+The Fitbit line of smartwatches include a built in heart rate monitor and functionallity to easily monitor the user's heart rate while they are working with the data. The heart rate that is measured needs to match up to the data that is being viewed. If the heart rate is monitored but there is no log of what data was being viewed at the exact time, the heart rate data is useless. 
+\section{Performance Metrics}
+\begin{description}
+\item \textbf{Voice Commands} The user should be able to verbally request data to view. 
+\item \textbf{VR Display} The requested data should be displayed in the VR display. When the user requests new data, it should be added alongside the data currently being displayed.
+\item \textbf{VR Interaction} The user should be able to use the controllers to point and drag data sets. If there are multiple different sets of data, they should be able to be overlaid to view a comparison between the two or more sets. 
+\item \textbf{Heart Rate Monitoring} The user's heart rate should be monitored while they are viewing data. The recorded data should be matched with what they were currently viewing at the moment the heart rate was recorded. This is to enable the identification of data results that cause stress.
+\item \textbf{Forewarning} The captured heart rate data should be used to identify data trends that cause a negative reaction from the user. These identified trends can be identified in future data to warn the user early on, before it gets as bad as previously.
+\item \textbf{Usability} Is it easy to use? The system should be able to take a request and begin responding within 10 seconds. Too long of a response time, and the user is better off sticking with the previous method of manually accessing data from a computer. The point of this project is to make the data easily accessible with a quick, simple question.
+\item \textbf{Test Cases} In order to make sure it works, and ensure that updates don't break features of the system, it needs to have automated test cases that can be run to check the status of new revisions. 
+\end{description}
+\end{document}
