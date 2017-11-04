@@ -84,7 +84,7 @@
         The purpose of this document is to provide the specific requirements needed to our client (Trevor Moore), about the Look Boss, No Hands project, and what it means to be done and to succeed.
 
     \subsection{Scope}
-        The Look Boss, No Hands software will allow for voice recognition to retrieve data and show it in a human comprehensive way with data visualization on a VR headset. This allows for the integration of three separate systems to integrate with one to provide users a new method of access and interaction with data.
+        The Look Boss, No Hands software will allow for voice recognition to retrieve data and show it in a human comprehensive way with data visualization (such as basic bar and line charts) on a VR headset. Along with the stretch goal of adding wearable interaction to monitor the users vitals.  This allows for the integration of three separate systems to integrate with one to provide users a new method of access and interaction with data.
 
     \subsection{Definitions, Acronyms, Abbreviations}
 
@@ -94,9 +94,6 @@
             \item \textbf{Wearables} are electronic devices that are designed to be worn and come with an array of sensors and outside connections. Smartwatches are the most common example of a wearable. They come with sensors to detect things such as heart rate and typically connect to a smartphone through Bluetooth.\cite{def_wear}
         \end{itemize}
 
-    \subsection{References}
-        \bibliographystyle{ieeetr}
-        \bibliography{bib}
 
     \subsection{Overview}
         The rest of this document contains descriptions of the required functionality, interfaces, and use cases.
@@ -108,16 +105,19 @@
     \subsection{Product Functions}
 
         \subsubsection{Voice Recognition}
-            Voice recognition is one of the two primary functions of the product. This lets a user verbally request data. At the very least, it needs to be able to take in one command that correlates to the data desired. Such as ``Show me Ford’s sales data in 2016``.
+            Voice recognition is one of the two primary functions of the product, this lets a user verbally start the experience. At the very least, it needs to be able to take in one command that correlates to the data desired. Such as ``Show me Ford’s sales data in 2016``.
 
         \subsubsection{Display}
-            Display is the other primary function. The display in VR should show a user data in a virtual environment. In which they can interact with the data such that they can overlay graphs, zoom in and out between time.
+            Display is the other primary function, the display in VR should show a user data in a virtual environment. In which they can interact with the data such that they can overlay graphs, zoom in and out, and swipe with their hands to get new graphs.
 
         \subsubsection{Secondary Commands And Displays (Stretch Goal)}
             Adding a secondary command will show how modular our system is, and the ease of adding another query actually is.
 
-        \subsubsection{Heart Rate Monitoring}
+        \subsubsection{Heart Rate Monitoring (Stretch Goal)}
             A user wearing a wearable will have their heart rate monitored and tracked by the device, learning what data trends causes stress in the user and to later send notifications when the data begins following a similar trend.
+
+        \subsubsection{Machine Learning (Stretch Goal)}
+            With machine learning, have Alexa learn what common requests are made. Such that when someone asks Alexa for sales data, Alexa suggests related data or what data type is most commonly preferred among users.
 
     \subsection{User Characteristics}
         Everyone should be able to experience the program by putting on the headset and telling the voice assistant to do something.
@@ -137,7 +137,6 @@
             \end{itemize}
         \subsubsection{User Interfaces}
             \begin{itemize}
-                \item A user uses their voice to verbally request data to be shown. A user can request data to view by simply putting on the headset and speaking
                 \item Contextual requests allow the user to follow up their request with a related one without having to request the data again. This allows the user to ask for ''Ford sales in 2016'' and to then refine it with ''sales data in November'' without having to specify the year again.
                 \item A VR headset to display the requested data
             \end{itemize}
@@ -163,18 +162,20 @@
             \begin{itemize}
                 \item The voice assistant should state that it got the command received, and reply back letting the user know that the correct program has been started.
             \end{itemize}
-            Associated Functional Requirements
-            \begin{itemize}
-                \item (Stretch Goal) should the project be finished semi-early, the next step would be adding more commands to the voice assistant to process.
 
-            \end{itemize}
         \subsubsection{VR Headset}
             \begin{itemize}
                     \item The headset should be synchronized with the voice assistant to respond and show the appropriate data visualization when prompted. In which a user can reach out and touch and move the data with the hand controllers.
             \end{itemize}
+        \subsubsection{Branching System}
+            \begin{itemize}
+            \item A gitflow work system should be followed, such that there are three main branches: master, develop, and hotfix. The master branch will be reserved for product releases, develop will contain working renditions of features that haven't made it into production, and hotfix will be for any bugs that occur during production that need to be fixed quickly.
+
+            \item During development, branches should also be put into     folders such as, feature/voice-recognition.
+            \end{itemize}
 
         \subsection{Code Review}
-            To keep code clean and functionality functional, updates should be submitted to appropriate code repository branches. These updates should then be reviewed by another individual of the group and once that is complete and the update is satisfactory, it is then added to the master copy of the system.
+            To keep code clean and functional, updates should be submitted to appropriate code repository branches. These updates should then be reviewed by another individual of the group and once that is complete and the update is satisfactory, it is then added to the develop branch of the repository.
 
     \subsection{Design Constraints}
         Our client has stated that while the base goal of using an Alexa to request data from words. The system must be modular and flexible enough to incorporate new commands to pull from the database and display to the VR with minimal effort. Meaning adding new commands shouldn’t take more than a few hours worth of work both on the voice recognition and virtual reality side.
@@ -193,7 +194,11 @@
    The software quality of our product must allow for further addition of more data from multiple other dealerships. Employees will have to add additional data as new dealerships rise. To allow easy modifications, our code must be uniformed and simple to understand. As employees add more data to the databases, more information can be retrieved from the voice assistant to the VR headset.
 
 \section{Gantt Chart}
-\includegraphics[width=\textwidth,height=5cm]{Gantt}
+\includegraphics[width=\textwidth,height=5cm]{Gantt.png}
+\newpage
+\subsection{References}
+        \bibliographystyle{ieeetr}
+        \bibliography{bib}
 
 
 \end{document}
