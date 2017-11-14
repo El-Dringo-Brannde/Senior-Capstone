@@ -1,0 +1,85 @@
+\documentclass[letterpaper,10pt,onecolumn]{IEEEtran}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{hyperref}
+\usepackage{cite}
+
+\def\name{Carl Benson}
+
+\parindent = 0.0 in
+\parskip = 0.1 in
+
+\begin{document}
+\sloppy
+\title{Technology Review}
+\date{CS461 Fall 2017}
+\author{Carl Benson}
+
+\maketitle
+
+\clearpage
+
+\section{VR Headset}
+  \subsection {Description} The VR headset is one of the critical systems for our project. Without it, there would be nowhere to display the information. There are several options for headsets that have emerged in recent years. These displays have evolved to include similar features and specifications but each still has pros and cons when compared to other systems.
+
+  \subsection {Criteria}
+    \begin{enumerate}
+      \item A high quality display is a must. Early models featured displays with low resolution and refresh rate which could cause nausea after even a short session.
+      \item An interaction method is very nice to have. The minimum viable product at the end of this project does not require interaction with the display data, however it would be required for certain stretch goals.
+      \item The headset should be price conscientious. These systems may be deployed in multiple locations, so the lower the cost is the better.
+      \item Development shouldn\textsc{\char13}t be overly complicated or full of hoops to jump through.
+    \end{enumerate}
+
+  \subsection {Hololens}
+    The Hololens is the headset created by Microsoft to provide a mixed reality environment. Unlike the Vive and Rift, which completely encompass the view of the user, the Hololens overlays objects onto the current environment. Surroundings are still available, but through the display, floating items are overlaid onto it. Interaction is handled without the use of controllers. Cameras integrated into the headset track hand movements and interpret gestures. Items are selected by simply pointing at them. These technologies come at a premium however, which is the primary drawback to the Hololens. Pricing begins at \$3,000. \cite{hololens}
+  \subsection {HTC Vive}
+    The HTC Vive provides a full virtual reality experience. The head mounted display fully obscures the user\textsc{\char13}s vision, allowing them to only see what is displayed on screen. There are two displays, one for each eye. Each display features a resolution of 1080x1200 at a refresh rate of 90hz. Two external devices set with a high point of view track the headset to allow for head tracking and positioning. This tracking allows for a user to look and move around the environment. Interaction is handled through the use of two handheld controllers that feature buttons as well as pointing ability. The Vive costs \$600 and all the features are included at that price. \cite{vive}
+
+  \subsection {Oculus Rift}
+    The Oculus Rift is another full VR headset. Like the Vive, the user\textsc{\char13}s vision is fully obscured by the display. The twin displays in the Rift feature the same resolution and refresh rate as the Vive as well. Head tracking is handled through integrated sensors, with optional external devices for more accurate tracking as well as tracking position within the room. The Rift costs \$500 for the headset and controllers, with another \$135 for position tracking. \cite{rift}
+  \subsection {Comparison}
+    The Rift and Vive both feature similar features to the Hololens. While the extra functionality of mixed reality and controller-less interaction would be nice, they don\textsc{\char13}t justify a over a \$2,000 cost increase, so the Hololens isn\textsc{\char13}t a good option. The Rift and Vive both feature very close features and specifications. Both have the same quality of screen, both come with controllers, allow for head tracking, have the option of positional tracking, and are supported by the same game engines.
+
+\section{Data Hosting}
+  \subsection {Description}
+    Hosting the data somewhere is a requirement for it to be retrieved. Even if it is saved on the computer running the display, it still is then being hosted by that computer. There are a number of requirements for the storage location of the data.
+  \subsection {Criteria}
+    \begin{enumerate}
+      \item The server must be reliable. If the server goes down, the data is inaccessible.
+      \item Hosting the server isn\textsc{\char13}t free, however the cost shouldn\textsc{\char13}t be a significant cost in the project.
+      \item The server must be fast enough to load the data and send it to the headset within the timelimit.
+      \item The data stored may contain sensitive information, so it must be stored in a secure manner.
+    \end{enumerate}
+  \subsection {Amazon Web Services}
+    Amazon Web Services (AWS) is a wide range of services offered by Amazon. Among these are the AWS Lambda and S3 services. AWS Lambda provides computational services in response to events. This would allow for the virtual assistant to send an event to the server which would then process the request and return the resulting data to the headset. If we choose to use the Alexa, the Alexa skills tie directly into the Lambda service. AWS S3 is a storage and content delivery system. It stores given data in an accessible form to then deliver on request. There are currently a total of 15 data centers in the US offering these services. Having multiple data centers allows for better response time by offering a server physically close by. It also increases reliability, as if something goes wrong in one area there is a fallback already in place. AWS offers a service known as Macie for their storages. This service utilizes machine learning to ensure that any data is stored in such a way to  keep even personally identifiable information secure. Their pricing starts at \$0.023/GB per month. Additionally, the client already has systems in place utilizing AWS services. \cite{aws}
+
+  \subsection {Google Cloud Platform}
+    Google has their own Google Cloud Platform for the services they offer. They offer data storage, processing, and delivery services. They have 13 data centers in the US. Their pricing starts at \$0.026/GB per month for storage. Google\textsc{\char13}s services go through routine audits to ensure that they are compliant with a number of security standards, such as for storage of personally identifiable information. \cite{gcp}
+
+  \subsection {Local Hosting}
+    Local hosting is another option for data storage. The only cost is the upfront equipment cost and the cost to operate the system. However, this requires all operation and setup to be done in-house. The software to enable data request, keep it safe, and process it need to be configured and kept up to date. If anything were to happen to the local server, the data would be gone. Access to the data outside of the location needs to be set up separately and protected from attacks.
+
+  \subsection {Comparison}
+    Local hosting is far too large of a hassle to be reasonable. Any possible cost saving benefits are outweighed by the risk of data loss, security breach, and maintenance. The services offered by Google and Amazon both offer very high reliability and availability at a low cost. Google and Amazon both offer a similar set of services, at similar cost, and boast multiple data centers. The largest deciding factor is that CDK already utilizes and has data stored on AWS, which is why we have elected to go with it.
+
+\section{Testing Framework}
+  \subsection {Description}
+    Testing is an important step in software development. It not only ensures that the code supports the features required, but that it does so without errors. Automated testing suites provide a platform to develop tests that run automatically and perform consistent tests to help remove human error from tests. Given that there will be multiple languages incorporated in this project, this selection will focus on a test framework for Javascript.
+  \subsection {Criteria}
+    \begin{enumerate}
+      \item Speed is important. The tests are going to be run against each new update which means they can\textsc{\char13}t take days to run.
+      \item If a test fails, we need to know. There isn\textsc{\char13}t a single way to alert for a test failure, so the way the chosen framework does it will need to be suitable for our uses.
+    \end{enumerate}
+  \subsection {Mocha}
+    Mocha is a testing framework built on Node.js and runs the test sequentially. Sequentially running tests can have its benefits, however. With concurrent testing, the framework relies on the tests informing it if they finished. If a test fails in a particularly ugly way, it may never report back. However, running the tests sequentially allows closer monitoring of test progress to more accurately return the test result. \cite{mocha}
+  \subsection {Jasmine}
+    Jasmine supports Node.js, Ruby, and Python. While two of these languages are not currently planned for use, using a framework that supports them could potentially be beneficial if future decisions utilize these languages. \cite{jasmine}
+  \subsection {AVA}
+    AVA is built on Node.js and features support for running tests sequentially or concurrently. The ability to run multiple tests at once can drastically increase the speed at which the tests are completed. \cite{ava}
+  \subsection {Comparison}
+    All three of these frameworks are fully open source with similar features. Mocha has twice the contributors compared to Jasmine and AVA. While this doesn\textsc{\char13}t necessarily correlate to popularity or quality, it can be a hint towards future support. The scale of our project is relatively small, so the time increase for running all the tests sequentially will be minimal, whereas improper or misleading test results can cause unnecessary delays. We will be utilizing the Mocha due to its thorough documentation, large backing, and powerful testing abilities. \cite{MvJ}
+
+    \clearpage
+    \bibliography{bib}{}
+    \bibliographystyle{ieeetr}
+\end{document}
