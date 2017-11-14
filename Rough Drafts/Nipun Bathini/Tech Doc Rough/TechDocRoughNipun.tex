@@ -1,0 +1,233 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{setspace}
+
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+\usepackage{hyperref}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+
+\def \DocType{		Technology Review Rough
+				}
+			
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil 	\makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill		\makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil		\makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill	\makebox[.75in][r]{Date}}}}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+\renewcommand{\NameSigPair}[1]{#1}
+
+%Created by: Nipun Bathini
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+    	%\includegraphics[height=4cm]{coe_v_spot1}
+        \hfill 
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            {\large\today}\par
+			{\large CS461 Fall 2017}\par
+			{\large Group 9}\par
+            \vspace{2.5in}
+            \textbf{\Huge{Technology Review}}\par
+			\textbf{\Huge{(Rough Draft)}}\par
+            \vspace{2.5in}
+            {\large Prepared by }\par
+            \vspace{5pt}
+            {\Large
+                \NameSigPair{Nipun Bathini}\par
+			\vfill
+			\textbf{Abstract} \\
+            \indent 
+				ABSTRACT WILL GO HERE IN FINAL DRAFT
+            }
+            \vspace{20pt}
+        }
+      
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+
+
+
+\section{Technology 1: Assistants}
+	\subsection{Introduction}
+	
+		Smart assistants have become more and more popular since Apple had introduced Siri back in 2010. These assistants are able to perform tasks for individuals, some more efficiently than others. 
+		The convenience is that one can ask the assistant to do tasks, simply by using their voice. Examples of tasks could be asking the device to play a song, tell you some information, or even cast 
+		to other devices. Using a voice activated, smart assistant is crucial for the project. The purpose of the assistant is for the user to ask it for data connected to a database, which it will then 
+		send to our selected VR headset for the user to visualize.  Although there are many smart assistants available, we have narrowed it down to Amazon Echo, Google Home, and Apple’s Siri. We left out 
+		other options, like Microsoft’s Cortana, because they were simply not as popular. 
+	
+	\subsection{Amazon Echo}
+	
+		First on the list of assistants is the Amazon Echo, with the name of the Assistant being Alexa. Like the other devices, Alexa is capable of doing basic tasks like playing a requested song or even dimming 
+		the lights in the room [1]. Amazon responds to the names Alexa, Echo, Amazon or Computer and will attempt the task you follow up with. The echo is equipped with a speaker to play the songs you ask, but it is
+		not a device to buy for the speaker, because you can find better speakers for cheaper [1]. Alexa has the ability to connect your smartphones, where you can install skills to Alexa. Skills are basically applications
+		for Alexa. In April, Amazon released an Alexa Skill Kit, which made it easy to program new skills to Alexa yourself [1]. 
+		
+	\subsection{Google Home}	
+	
+		Next on the list of potential assistants is the Google Home. Released two years after the Echo, the Google Home has become a strong competitor. Similar to Alexa, the device can do all the basic tasks. The Google Home 
+		also has a touch display on the top, which allow you to interact with the assistant, adjust volume and more [2]. One benefit of the Google Home is its ability to cast to other devices on the same Wi-Fi network. For example, 
+		you could ask Google to play YouTube video on the TV. Google Home includes Google Assistant, a rival to Apple’s Siri.
+		
+	\subsection{Siri}
+	
+		Siri was introduced after Apple had purchased it from Dag Kittlaus and his team, who were creating it as an application for the iPhone [3]. Siri is a voice assistant that is available in apple products, most popular on the iPhone.
+		Similar to the other two devise, Siri will respond to her name. Siri is constantly improved after every iOS update that is brought to the phones.
+		
+	\subsection{Compare and Conclude}
+	
+		Although these three devices share many abilities, they also have some differences. Google home has the ability to answer more advanced questions when compared to Alexa [2]. Alexa can only register one command at a time, while the Google 
+		Home allows you to ask follow up questions. Alexa compared to the Home and Siri has better tools and information for developers who would like to create new skills. Both the Home and Echo are devices that are plugged into a wall, while Siri
+		is available on the phone. This gives the user the opportunity to use Siri anywhere they go. To conclude, we chose Amazon’s Echo for this project, because we are focusing on programming new abilities for the device. Amazon’s skills and developer 
+		website makes this easier, not to forget endless information available online.
+		
+\section{Technology 2: Wearables}
+
+	\subsection{Introduction}
+	
+		Smart devices have advanced into being able to be worn on our wrists. These wearables are known to simplify life by send information from your phone to the device. For example, text messages and phones calls. Our project requires a smart wearable to
+		obtain the heart rate of the user. The user should be wearing the device while interacting with the data presented on the virtual headset. If the users heart rates spikes, that should be recorded and attention can be brought to the headset screen. Three 
+		popular wearables that were in consideration for our project were the Fitbit, Samsung Gear, and Apple Watch.
+	
+	\subsection{Fitbit}
+	
+		The first wearable that was brought into consideration is the Fitbit. A Fitbit is simply an activity tracker, keeping track of data from daily activities [4]. The device allows you to set step goals, and the data helps you keep progress. In addition, the 
+		device can track sleep and heart rate [4]. The Fitbit can be connected to your smart phone, and if you do not have one a computer is all you need. Although, pairing with smart phones and obtaining all the data you seek is simpler with the phone application. 
+		Since the Fitbit is capable of showing heart rate, this makes it a possible option.
+		
+	\subsection{Samsung Gear}	
+	
+		The Samsung Gear is Samsung’s smart watch and a major competitor of the Apple watch. The Gear includes a clear 360 by 360 OLED screen which gives it a clear display [5]. The new Samsung Gear 3 lacks Android wear, which limits the apps it can run, compared 
+		to the previous generations. The device was made to be focused on Samsung and android devices, but can also connect to all iPhones as long as they are running iOS 9 [5]. On the back of the Gear is where the heart rate monitor is placed and tracks heart your
+		heart rate. Since this device is sold as a watch, different bands are sold for those who plan to use this watch for fitness.
+		
+	\subsection{Apple Watch}
+	
+		The Apple watch has been continuing to rise in popularity since its release and even topped Rolex as the number one watch manufacturer in September of 2017 [6]. The apple watch comes in three options, GPS with cellular, GPS and the base model Apple watch. The 
+		cellular option allows the user to use the watch to send messages, make calls and more all without the need of connecting it to a phone. The apple watch is also capable of monitoring and recording heart rate, making it another possible option.
+		
+	\subsection{Compare and Conclude}
+	
+		Since retrieving the heart rate is the goal, the Apple watch scored 90% accuracy according to Michael Sawh[7]. This beat this accuracy rate of the Fitbit Charge HR, when compared. In comparison to both smart watches, the Fitbit has a smaller screen, and weighs 
+		less than the other two. The benefit of the smart watches is they are capable of having more apps and are better in sync with phones. To conclude, we chose to use a Fitbit, because we do not need all the extra features from the smart watches. Our goal is to 
+		retrieve the heart rate, which the Fitbit does and it does it while being a cheaper option.
+	
+	
+\section{Technology 3: Data Storage}
+
+	\subsection{Introduction}
+	
+		Data storage is very important when considering our Project. All data will be stored in a data base, this is so it is easy to manage and update the data. Having a solid database is crucial, because this is where all dealership and other data will be stored. 
+		The goal is to connect the voice assistant to the chosen database. When the user asks Alexa for sales data, the assistant should retrieve the data from the database and then send the information to the VR headset. The user will then be able to interact with 
+		the data through the headset. Possible database options include MongoDB, MySQL, and Couch DB. 
+	
+	\subsection{MongoDB}
+	
+		The first option is MongoDB, and it is an open-source document-oriented database [8]. In MongoDB everything is stored in Binary JSON files, this means that MongoDB supports all JS types of data. MongoDB has the use of dynamic schemes which remove the need for
+		pre-defining the structure, for example fields and value types [8]. This also allows for allows hierarchical relationships representation, array storage, and ability to change the records structure with ease [8].
+		
+	\subsection{MySQL}	
+	
+		Another option when looking at data storage was MySQL. This database is an open-source relational database management system [8]. MySQL uses tables which can be managed through structured query language. The language uses commands like SELECT, UPDATE, INSERT, DELETE,
+		and JOIN to edit and connect tables. The database all supports various storage engines, including InnoDB. 
+		
+	\subsection{CouchDB}
+	
+		CouchDB was our third option and shares many similarities with MongoDB, and they both are document-oriented databases. Data is stored in the JavaScript object notification format, as is organized by key-value pairs [9]. The values for the key-value pairs is either the data 
+		itself or a pointer to the location of the data. In addition to many of the features CouchDB shares with MongoDB, it also is capable of serving apps directly from the database [9].
+	
+	\subsection{Compare and Conclude}
+	
+		ABoth MySQL and MongoDB were written in C++ and C, but MongoDB is also in JavaScript. The first difference between the two that catches the eye, are that they are different types of databases. MongoDB is document oriented while MySQL uses a relational database [8]. MongoDB uses 
+		Dynamic schemas while MySQL uses strict. To conclude the database we chose to use is MongoDB. The main reason we are choosing to use MongoDB over MySQL or the less popular CouchDB is because the client, CDK Global, already uses MongoDB. Using the same database will make communication
+		between us and our client simpler.
+		
+
+	
+\section{Works Cited}
+
+[1] Clauser, G. and Echo, A. (2017). \textit{What Is Alexa? What Is the Amazon Echo, and Should You Get O}. Wirecutter. [Online].
+
+Available \url{https://thewirecutter.com/reviews/what-is-alexa-what-is-the-amazon-echo-and-should-you-get-one/}
+
+
+[2] Betters, E.  (2017). \textit{What is Google Home, how does it work, and when can you buy it?}. Pocketlint. [Online].
+
+Available \url{http://www.pocket-lint.com/news/137665-what-is-google-home-how-does-it-work-and-when-can-you-buy-it}
+
+
+[3] iMore. (2017). \textit{Siri}. iMore. [Online]. 
+
+Available \url{iMore}
+
+
+[4]	Marschel, L. (2015). \textit{Fitbit 101: Learn the Basics}. LalyMom. [Online]. 
+
+Available \url{http://lalymom.com/fitbit-101-what-is-a-fitbit-what-does-it-do-and-how-do-i-get-started}
+
+
+[5] Beavis, G. (2017). \textit{Samsung Gear S3 review}. TechRadar. [Online]. 
+
+Available \url{http://www.techradar.com/reviews/wearables/samsung-gear-s3-classic-1327492/review/3}
+
+[6]	Caldwell, S. (2017).  \textit{Apple Watch: The ultimate guide}. iMore. [Online]. 
+
+Available \url{https://www.imore.com/apple-watch}
+
+
+[7]	Sawh, M. (2017).  \textit{Apple Watch is best for measuring heart rate from the wrist says study}. Wareable. [Online]. 
+
+Available \url{https://www.wareable.com/apple/apple-watch-is-best-for-heart-rate-monitoring-3357}
+
+
+[8]	Korotya, E. (2017).  \textit{MongoDB vs MySQL Comparison: Which Database is Better?. }. Hacker Noon. [Online]. 
+
+Available \url{https://hackernoon.com/mongodb-vs-mysql-comparison-which-database-is-better-e714b699c38b}
+
+
+[9]	SearchDataManagement. (2017). \textit{What is CouchDB? }. TechTarget. [Online]. 
+
+Available \url{http://searchdatamanagement.techtarget.com/definition/CouchDB}
+
+
+\end{document}
+
+
+
+
+
+
+
