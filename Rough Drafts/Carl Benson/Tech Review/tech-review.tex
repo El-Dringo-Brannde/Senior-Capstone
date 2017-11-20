@@ -65,22 +65,23 @@
 \section{Machine Learning Framework}
   \subsection {Description}
 	Machine learning introduces functionality to a computer system to identify and react to events. In the context of this project, machine learning will be utilized to identify data trends that cause stress in the user. Once identified, the system can learn to warn users of similar data trends in the future.
+
+  In 2005, a paper was published in the \textit{Engineering in Medicine and Biology Society} using heart rate variability and skin response with a neural network to identify human emotional responses with a finaly result of 80.2\% accuracy. In the paper, a Multilayer Perceptron (MLP) neural network structure was used. \cite{nn-emotion}
   \subsection {Criteria}
     \begin{enumerate}
-      \item Speed is important. If the system runs too slowly, it may not be able to keep up with the provided data. If it doesn't track trends quickly enough, it will not be able to provide forewarning.
+      \item Speed is important. If the system runs too slowly, it may not be able to keep up with the provided data or take far too long to train the system. If it doesn't track trends quickly enough, it will not be able to provide forewarning.
       \item Accuracy is a must. If the system tracks information incorrectly, it may give warnings without warrant.
-	  \item Machine learning has the capability to amazing things such as driving or optical image recognition. The usage initially in our project will be nowhere near that level of complexity, so the framework needs to be easy enough to use without being bogged down by unneeded functionality.
+	  \item Machine learning has the capability to do amazing things such as driving or optical image recognition. The usage initially in our project will be nowhere near that level of complexity, so the framework needs to be easy enough to use without being bogged down by unneeded functionality.
     \end{enumerate}
   \subsection {MXNet}
-    MXNet is a deep learning library designed by the Apache Software Foundation. It has APIs for Python, Scala, R, Julia, C++, and Perl. It offers installers for the typical computer operating systems as well as the Raspberry Pi and NVIDIA Jetson TX2. \cite{mxnet} 
+    MXNet is a deep learning library designed by the Apache Software Foundation. It has APIs for Python, Scala, R, Julia, C++, and Perl. It offers installers for the typical computer operating systems as well as the Raspberry Pi and NVIDIA Jetson TX2. \cite{mxnet}
   \subsection {TensorFlow}
-    TensorFlow was originally designed for internal use at Google to detect patterns in a similar way to the human brain. It was released under an open source license in 2015. \cite{mapr-tensor} Installers are available for all flavors of computer operating systems as well as Android and iOS. TensorFlow scales across multiple processing units. There are official APIs for Python, C++, Java, and Go. \cite{tensor-lang}
+    TensorFlow was originally designed for internal use at Google to detect patterns in a similar way to the human brain. It was released under an open source license in 2015. \cite{mapr-tensor} Installers are available for all flavors of computer operating systems as well as Android and iOS. TensorFlow scales across multiple processing units. There are official APIs for Python, C++, Java, and Go. \cite{tensor-lang} \cite{friedman_2017}
   \subsection {Caffe2}
 	Caffe was originally developed in the Berkeley Vision and Learning center. Facebook developed and released Caffe2 in April of 2017. It has installers for all the standard computer and mobile device operating systems, as well as Raspberry Pi and Tegra devices. There are APIs for C++ and Python.
   \subsection {Comparison}
-    
-
+      All three frameworks support the three primary operating systems, Windows, Mac OS, and Linux. TensorFlow and Caffe2 both support running on mobile devices as well, which while not currently something necessary, having the support could potentially create oportunities later down the road. All three of the frameworks support functionality for creating and utilizing an MLP, which has been shown to be effective for identifying emotional responses. MXNet and TensorFlow feature open source code for using it, which would decrease the learning curve in setting it up. All three frameworks feature extensive documention, examples, and community tutorials. TensorFlow and MXNet both have full implementation examples using MLP. While Caffe2 supports it, there is not a ready made implementation of MLP with it. Testing by Jasmeet Bhatia, a Data and AI Solution Architect for Microsoft, showed MXNet performing MLP operations in 56\% of the time compared to TensorFlow. \cite{nn-tvm} MLP examples and documentation give TensorFlow and MXNet a small edge compared to Caffe2. The efficiency testing by Jasmeet adds to that of MXNet due to the speed over TensorFlow. For these reasons, we will be utilizing MXNet for the machine learning framework.
     \clearpage
-    \bibliography{bib}{}
+    \bibliography{bib}
     \bibliographystyle{ieeetr}
 \end{document}
