@@ -62,22 +62,23 @@
   \subsection {Comparison}
     Local hosting is far too large of a hassle to be reasonable. Any possible cost saving benefits are outweighed by the risk of data loss, security breach, and maintenance. The services offered by Google and Amazon both offer very high reliability and availability at a low cost. Google and Amazon both offer a similar set of services, at similar cost, and boast multiple data centers. The largest deciding factor is that CDK already utilizes and has data stored on AWS, which is why we have elected to go with it.
 
-\section{Testing Framework}
+\section{Machine Learning Framework}
   \subsection {Description}
-    Testing is an important step in software development. It not only ensures that the code supports the features required, but that it does so without errors. Automated testing suites provide a platform to develop tests that run automatically and perform consistent tests to help remove human error from tests. Given that there will be multiple languages incorporated in this project, this selection will focus on a test framework for Javascript.
+	Machine learning introduces functionality to a computer system to identify and react to events. In the context of this project, machine learning will be utilized to identify data trends that cause stress in the user. Once identified, the system can learn to warn users of similar data trends in the future.
   \subsection {Criteria}
     \begin{enumerate}
-      \item Speed is important. The tests are going to be run against each new update which means they can\textsc{\char13}t take days to run.
-      \item If a test fails, we need to know. There isn\textsc{\char13}t a single way to alert for a test failure, so the way the chosen framework does it will need to be suitable for our uses.
+      \item Speed is important. If the system runs too slowly, it may not be able to keep up with the provided data. If it doesn't track trends quickly enough, it will not be able to provide forewarning.
+      \item Accuracy is a must. If the system tracks information incorrectly, it may give warnings without warrant.
+	  \item Machine learning has the capability to amazing things such as driving or optical image recognition. The usage initially in our project will be nowhere near that level of complexity, so the framework needs to be easy enough to use without being bogged down by unneeded functionality.
     \end{enumerate}
-  \subsection {Mocha}
-    Mocha is a testing framework built on Node.js and runs the test sequentially. Sequentially running tests can have its benefits, however. With concurrent testing, the framework relies on the tests informing it if they finished. If a test fails in a particularly ugly way, it may never report back. However, running the tests sequentially allows closer monitoring of test progress to more accurately return the test result. \cite{mocha}
-  \subsection {Jasmine}
-    Jasmine supports Node.js, Ruby, and Python. While two of these languages are not currently planned for use, using a framework that supports them could potentially be beneficial if future decisions utilize these languages. \cite{jasmine}
-  \subsection {AVA}
-    AVA is built on Node.js and features support for running tests sequentially or concurrently. The ability to run multiple tests at once can drastically increase the speed at which the tests are completed. \cite{ava}
+  \subsection {MXNet}
+    MXNet is a deep learning library designed by the Apache Software Foundation. It has APIs for Python, Scala, R, Julia, C++, and Perl. It offers installers for the typical computer operating systems as well as the Raspberry Pi and NVIDIA Jetson TX2. \cite{mxnet} 
+  \subsection {TensorFlow}
+    TensorFlow was originally designed for internal use at Google to detect patterns in a similar way to the human brain. It was released under an open source license in 2015. \cite{mapr-tensor} Installers are available for all flavors of computer operating systems as well as Android and iOS. TensorFlow scales across multiple processing units. There are official APIs for Python, C++, Java, and Go. \cite{tensor-lang}
+  \subsection {Caffe2}
+	Caffe was originally developed in the Berkeley Vision and Learning center. Facebook developed and released Caffe2 in April of 2017. It has installers for all the standard computer and mobile device operating systems, as well as Raspberry Pi and Tegra devices. There are APIs for C++ and Python.
   \subsection {Comparison}
-    All three of these frameworks are fully open source with similar features. Mocha has twice the contributors compared to Jasmine and AVA. While this doesn\textsc{\char13}t necessarily correlate to popularity or quality, it can be a hint towards future support. The scale of our project is relatively small, so the time increase for running all the tests sequentially will be minimal, whereas improper or misleading test results can cause unnecessary delays. We will be utilizing the Mocha due to its thorough documentation, large backing, and powerful testing abilities. \cite{MvJ}
+    
 
     \clearpage
     \bibliography{bib}{}
