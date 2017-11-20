@@ -46,6 +46,6 @@ clean:
 	rm -f *.pdf *.ps *.dvi *.out *.log *.aux *.bbl *.blg *.pyg
 
 cleanish:
-	rm -f *.ps *.dvi *.out *.log *.aux *.bbl *.blg *.pyg
+	rm -f *.ps *.dvi *.out *.log *.aux *.bbl *.blg *.pyg *.toc
 
 .PHONY: all show clean ps pdf showps
