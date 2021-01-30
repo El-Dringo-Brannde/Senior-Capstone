@@ -1,0 +1,31 @@
+{
+   "name": "test",
+   "version": "1.0.0",
+   "description": "",
+   "main": "server.js",
+   "scripts": {
+      "test": "mocha test/**/*.js",
+      "start": "node server.js",
+      "dev": "nodemon server.js"
+   },
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "assert": "^1.4.1",
+      "async": "^2.6.0",
+      "axios": "^0.18.0",
+      "body-parser": "^1.18.2",
+      "chai": "^4.1.2",
+      "express": "^4.16.2",
+      "express-validator": "^4.3.0",
+      "lodash": "^4.17.4",
+      "mocha": "^4.0.1",
+      "mongodb": "^3.0.0-rc0",
+      "socket.io": "^2.0.4",
+      "socket.io-emitter": "^3.1.1",
+      "supertest": "^3.0.0"
+   },
+   "devDependencies": {
+      "nodemon": "^1.17.3"
+   }
+}
